@@ -37,11 +37,6 @@ pipenv install -d <package_name>
 pipenv install --dev <package_name> 
 ```
 
-* install packages from `requirements.txt`
-```bash
-pipenv install -r <file_name.ext>
-```
-
 ### Uninstall Packages
 * uninstall packages
 > for verbose mode you can add `-v` options or use `--verbose`
@@ -54,7 +49,16 @@ pipenv uninstall --verbose <package_name>
 * uninstall only `development` packages
 > for verbose mode you can add `-v` options or use `--verbose`
 ```bash
-pipenv uninstall <package_name> 
-pipenv uninstall -v <package_name> 
-pipenv uninstall --verbose <package_name>
+pipenv uninstall --all-dev
+```
+
+### Requirements File
+* Import dependencies from `requirements.txt` file
+```bash
+pipenv install -r requeriments.txt
+```
+
+* Export dependencies into `requirements.txt` file
+```bash
+pipenv run pip freeze > requirements.txt
 ```
